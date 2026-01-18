@@ -29,8 +29,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(@Valid @RequestBody User user){
-        User savedUser = userRepository.save(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+        User UserSaved = userRepository.save(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(UserSaved);
     }
     @PostMapping("/multiple")
     public ResponseEntity<List<User>> createMultipleUsers(@RequestBody List<User> users) {
