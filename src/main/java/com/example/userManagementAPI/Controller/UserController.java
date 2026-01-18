@@ -14,8 +14,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -45,8 +43,8 @@ public class UserController {
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id){
-            Optional<User> user = userRepository.findById(id);
-            return user.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+            Optional<User> users = userRepository.findById(id);
+            return users.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -70,12 +68,12 @@ public class UserController {
         }
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getCreatedat() {
+        return createdat;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedat(LocalDateTime createdat) {
+        this.createdat = createdat;
     }
 
     public LocalDateTime getUpdatedAt() {
@@ -89,7 +87,7 @@ public class UserController {
     //new column timestamp
     @Column(name = "created_at" , updatable = false)      //updatable=false ensures its set only once
     @CreationTimestamp
-    private LocalDateTime createdAt;
+    private LocalDateTime createdat;
 
     //new - update time stamp
     @Column(name = "updated_at")
