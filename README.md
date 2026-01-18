@@ -4,19 +4,6 @@ A secure and scalable RESTful API for user management built with **Spring Boot**
 
 ---
 
-## 🚀 Features
-
-- ✅ User Registration & Login
-- 🔐 Secure Authentication (HTTP Basic Auth)
-- 👤 Role-based Authorization (`USER`, `ADMIN`)
-- 🔒 Password Encryption using BCrypt
-- 🌍 CORS Configuration for cross-origin requests
-- 🔁 Stateless Session Management
-- 📄 REST API with clear endpoints
-- 📦 Modular codebase with services, controllers, DTOs
-
----
-
 ## 🧱 Project Structure
 
   userManagementAPI/
@@ -36,12 +23,9 @@ A secure and scalable RESTful API for user management built with **Spring Boot**
 
 - Java 17
 - Spring Boot 3.x
-- Spring Security
-- Spring Data JPA
 - H2 / MySQL
-- Lombok
 - Postman (for API testing)
-- Git + GitHub
+
 
 ---
 
